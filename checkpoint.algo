@@ -1,0 +1,78 @@
+ALGORITHM checkpoint2 
+VAR 
+count,  lg1, lg2,i,j: INTEGER;
+somme:INTEGER:0;
+tab1,tab2:array_of INTEGER [];
+tab1:=[3,1,7,9];
+tab2:=[2,4,1,9,3];
+HASH_TABLE<integer,integer>
+    set_declarations
+BEGIN
+for i from 0 to 3 step1 Do 
+for j from 0 to 4 stp1 Do
+if(tab1[i]=tab2[j]) then
+check=true
+end if false
+end for
+if(check== false)
+somme:=somme+tab1[i]
+end if 
+end for 
+
+
+for j from 0 to 4 step1 Do 
+for i from 0 to 3 stp1 Do
+if(tab1[j]=tab2[i]) then
+check=true
+end if false
+end for
+if(check== false)
+somme:=somme+tab1[i]
+end if 
+end for 
+    set_instructions
+    -----------------------------------------------------------------------------------------------------------------
+for i from 0 to 3 step1 Do 
+for j from 0 to 4 stp1 Do
+if(tab1[i]=tab2[j]) then
+check=false
+end if false
+end for
+if(check== true)
+somme:=somme+tab1[i]
+end if 
+end for 
+for j from 0 to 4 step1 Do 
+for i from 0 to 3 stp1 Do
+if(tab1[j]=tab2[i]) then
+check=false
+end if false
+end for
+if(check== true)
+somme:=somme+tab1[i]
+end if 
+end for 
+---------------------------------------------------------------------------------------------------------------------
+for i from 0 to 4 step 1 Do
+if (HASH_TABLE.lookup(tab1[i])=true) then
+count :=HASH_TABLE.get(tab1[i]);
+HASH_TABLE.insert(tab1[i],count+1);
+ELSE
+HASH_TABLE.insert(tab1[i],1);
+end if
+END_For
+for j from 0 to 3 step 1 Do
+if (HASH_TABLE.lookup(tab2[j])=true) then
+count := HASH_TABLE.get(tab2[j]);
+HASH_TABLE.insert(tab2[j],count+1);
+ELSE
+HASH_TABLE.insert(tab2[j],1);
+end if
+END_For
+FOR HASH_TABLE.key from 0 to HASH_TABLE.key.lenght step 1 do 
+if (HASH_TABLE.value=2) then
+count=HASH_TABLE.key;
+end if 
+end for
+
+END
